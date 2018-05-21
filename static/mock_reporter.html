@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>BathroomBuddy Debug Fake Report</title>
+    <script type="text/javascript" src="/static/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        // send stall node request
+        $("#stall-node-report").click(function() {
+          $.post({
+            url: '/update/stallstatus',
+            data: $("#stall-node-form").serialize(),
+            success: function(data) {
+              $("#page-console").append("<p>"+data.toString()+"</p>");
+            }
+          }).fail(function() {
+            $("#page-console").append("<p>send failed</p>");
+          });
+        });
+      });
+    </script>
+    <style>
+      #page-console {
+        border: 1px solid;
+        overflow: auto;
+        width: 100%;
+        height: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="stall-node-form">
+      <p>location: <input type="text" name="location" value="00000005" /></p>
+      <p>busy: <input type="radio" name="busy" value="true" checked /> true <input type="radio" name="busy" value="false" /> false
+      <input type="hidden" name="postkey" value="asdfasdfasdfasdf" />
+    </form>
+    <p><a id="stall-node-report" href="#">Send stall node report</a></p>
+    <div id="page-console">
+      <p>ready</p>
+    </div>
+</body>

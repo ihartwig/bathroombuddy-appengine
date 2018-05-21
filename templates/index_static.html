@@ -1,0 +1,125 @@
+<html>
+  <head>
+    <title>Pure BathroomBuddy</title>
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+
+    <script type="text/javascript">
+      function hide_splash() {
+        var a = document.getElementById('splash')
+        a.classList.add('splash-done');
+      }
+    </script>
+  </head>
+  <body>
+    <div id="splash">
+      <div onclick="hide_splash()">
+        <h1>BathroomBuddy</h1>
+        <img id="slash-img" src="../static/splash.svg" width="200px" height="200px" />
+        <p>Find a Bathroom Stall Near Me</p>
+      </div>
+    </div>
+    <div id="container">
+      <nav>
+        <ul>
+          <li>List</li>
+          <li>Map</li>
+        </ul>
+      </nav>
+      <section class="room">
+        <h2>650 4th Floor Men's Room</h2>
+        <div class="room-container">
+          <div class="room-list-container">
+            <ul>
+              <li class="room-busy">
+                <div class="room-list-status">
+                  <div class="room-list-status-text">Busy</div>
+                  <div class="room-list-status-time">3 minutes ago</div>
+                </div>
+                <div class="room-list-info">
+                  <div class="room-list-name">Stall 0</div>
+                  <div class="room-list-review"><span>&#x2606;</span><span>&#x2606;</span><span>&#x2606;</span><span>&#x2605;</span><span>&#x2605;</span></div>
+                </div>
+              </li>
+              <li class="room-busy">
+                <div class="room-list-status">
+                  <div class="room-list-status-text">Busy</div>
+                  <div class="room-list-status-time">3 minutes ago</div>
+                </div>
+                <div class="room-list-info">
+                  <div class="room-list-name">Stall 1</div>
+                  <div class="room-list-review"><span>&#x2606;</span><span>&#x2606;</span><span>&#x2606;</span><span>&#x2605;</span><span>&#x2605;</span></div>
+                </div>
+              </li>
+              <li class="room-free">
+                <div class="room-list-status">
+                  <div class="room-list-status-text">Free</div>
+                  <div class="room-list-status-time">3 minutes ago</div>
+                </div>
+                <div class="room-list-info">
+                  <div class="room-list-name">Stall 2</div>
+                  <div class="room-list-review"><span>&#x2606;</span><span>&#x2606;</span><span>&#x2606;</span><span>&#x2605;</span><span>&#x2605;</span></div>
+                <div class="room-list-info">
+              </li>
+            </ul>
+          </div>
+          <div class="room-map-container">
+            <ul>
+              <li class="room-busy"></li>
+              <li class="room-busy"></li>
+              <li class="room-free"></li>
+              <li class="room-map-entrance"></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="room">
+        <h2>650 3rd Floor Men's Room</h2>
+        <div class="room-container">
+          <div class="room-list-container">
+            <ul>
+              <li class="room-busy">
+                <div class="room-list-status">
+                  <div class="room-list-status-text">Busy</div>
+                  <div class="room-list-status-time">3 minutes ago</div>
+                </div>
+                <div class="room-list-info">
+                  <div class="room-list-name">Stall 0</div>
+                  <div class="room-list-review"><span>&#x2606;</span><span>&#x2606;</span><span>&#x2606;</span><span>&#x2605;</span><span>&#x2605;</span></div>
+                </div>
+              </li>
+              <li class="room-busy">
+                <div class="room-list-status">
+                  <div class="room-list-status-text">Busy</div>
+                  <div class="room-list-status-time">3 minutes ago</div>
+                </div>
+                <div class="room-list-info">
+                  <div class="room-list-name">Stall 1</div>
+                  <div class="room-list-review"><span>&#x2606;</span><span>&#x2606;</span><span>&#x2606;</span><span>&#x2605;</span><span>&#x2605;</span></div>
+                </div>
+              </li>
+              <li class="room-free">
+                <div class="room-list-status">
+                  <div class="room-list-status-text">Free</div>
+                  <div class="room-list-status-time">3 minutes ago</div>
+                </div>
+                <div class="room-list-info">
+                  <div class="room-list-name">Stall 2</div>
+                  <div class="room-list-review"><span>&#x2606;</span><span>&#x2606;</span><span>&#x2606;</span><span>&#x2605;</span><span>&#x2605;</span></div>
+                <div class="room-list-info">
+              </li>
+            </ul>
+          </div>
+          <div class="room-map-container">
+            <ul>
+              <li class="room-busy"></li>
+              <li class="room-busy"></li>
+              <li class="room-free"></li>
+              <li class="room-map-entrance"></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </body>
+</html>

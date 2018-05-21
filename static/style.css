@@ -1,0 +1,164 @@
+.pagetitle {
+    color: #800080;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Helvetica, Ariel, san-serif;
+  color: #222;
+  font-size: 16px;
+}
+
+#container {
+  position: relative;
+  width: 100%;
+}
+
+#splash {
+  position: absolute;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  background: white;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+}
+
+#splash > div {
+  text-align: center;
+}
+
+#splash.splash-done {
+  top: -100%;
+  opacity: 0;
+}
+
+nav {
+  display: none;
+}
+
+.room-container {
+  display: flex;
+  display: -webkit-flex;
+}
+
+/* list view */
+
+.room-list-container {
+  -webkit-flex: 1;
+  flex: 1;
+}
+
+.room-list-container > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.room-list-container > ul > li {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  display: -webkit-flex;
+}
+
+.room-list-info {
+  -webkit-flex: 3;
+  flex: 3;
+}
+
+.room-list-status {
+  -webkit-flex: 1;
+  flex: 1;
+  min-width: 100px;
+  text-align: center;
+  vertical-align: center;
+}
+
+.room-list-status-text {
+  font-weight: bold;
+  font-size: 150%;
+}
+
+.room-busy .room-list-status-text {
+  color: #fe5000; /* pure orange */
+}
+
+.room-free .room-list-status-text {
+  color: green;
+}
+
+.room-list-status-time {
+  color: #ccc;
+  font-style: italic;
+  font-size: 60%;
+}
+
+/* list view: review stars */
+/* reverse star direction so we can use after selector */
+/* https://css-tricks.com/star-ratings/ */
+
+.room-list-review {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  color: #fe5000; /* pure orange */
+  cursor: pointer;
+}
+
+/* reset all stars to empty on hover */
+.room-list-review:hover span:before {
+  content: "\2606";
+  position: absolute;
+}
+
+/* make this and after stars solid */
+.room-list-review span:hover:before,
+.room-list-review > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+}
+
+/* map view */
+
+.room-map-container {
+  -webkit-flex: 2;
+  flex: 2;
+  background: #ccc;
+}
+
+.room-map-container > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  display: -webkit-flex;
+}
+
+.room-map-container > ul > li {
+  width: 104px;
+  height: 204px;
+  border: 0px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.room-map-container > ul > li.room-map-entrance {
+  background-image: url('stall-sprite-entrance.png');
+}
+
+.room-map-container > ul > li.room-busy {
+  background-image: url('stall-sprite-busy.png');
+}
+
+.room-map-container > ul > li.room-free {
+  background-image: url('stall-sprite-free.png');
+}

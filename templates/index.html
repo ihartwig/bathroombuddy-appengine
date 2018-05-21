@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title>BathroomBuddy</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <script type="text/javascript" src="/static/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/static/main.js"></script>
+  </head>
+  <body>
+    <div id="splash">
+      <div>
+        <h1>BathroomBuddy</h1>
+        <img id="slash-img" src="/static/splash.svg" width="200px" height="200px" />
+        <p>Find a Bathroom Stall Near Me</p>
+      </div>
+    </div>
+    <div id="container">
+      <nav>
+        <ul>
+          <li>List</li>
+          <li>Map</li>
+        </ul>
+      </nav>
+      <section class="room">
+        {% for room in room_config_layout %}
+        <h2>{{room.name}}</h2>
+        <div class="room-container">
+          <div class="room-list-container">
+            <ul>
+              {% for stall in room.stalls %}
+              <li class="room-free" id="{{stall.location}}-list">
+                <div class="room-list-status">
+                  <div class="room-list-status-text">Free</div>
+                  <div class="room-list-status-time">3 minutes ago</div>
+                </div>
+                <div class="room-list-info">
+                  <div class="room-list-name">{{stall.name}}</div>
+                  <div class="room-list-review"><span>&#x2606;</span><span>&#x2606;</span><span>&#x2606;</span><span>&#x2605;</span><span>&#x2605;</span></div>
+                </div>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="room-map-container">
+            <ul>
+              {% for stall in room.stalls %}
+              <li class="room-busy" id="{{stall.location}}-map"></li>
+              {% endfor %}
+              <li class="room-map-entrance"></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      {% endfor %}
+    </div>
+
+  </body>
+</html>
